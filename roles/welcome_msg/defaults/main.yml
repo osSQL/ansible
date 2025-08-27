@@ -1,0 +1,5 @@
+---
+# defaults file for ./welcome_msg
+
+welcome_mgs_00: printf "Welcome to $(hostname) , {{ ansible_facts.default_ipv4.address }} . Have a nice day administrator."
+

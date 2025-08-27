@@ -1,0 +1,25 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+
+  - name: tuned
+    apt:
+      name:
+        - tuned
+      state: present
+      update_cache: yes
+  
+  - name: tuned start
+    command:  systemctl start tuned
+    register: become_check
+    changed_when: false
+    failed_when: false
+
+  - name: tuned enable
+    command:  systemctl enable tuned
+    register: become_check
+    changed_when: false
+    failed_when: false
+
+ 

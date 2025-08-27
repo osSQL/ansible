@@ -1,0 +1,14 @@
+<html>
+<head>
+<h1>Configuration:</h1>
+</head>
+<body>
+    
+  <p>Ipv4: {{ ansible_facts.default_ipv4.address }}</p>
+  <p>Ram: {{ ansible_memory_mb.real.total }} </p>
+  <p>Cpu: {{ ansible_processor }}</p>
+  <p>Hdd: {{ ansible_devices.sdd.size }}</p>
+  
+
+</body>
+</html>

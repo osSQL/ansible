@@ -1,0 +1,10 @@
+---
+# tasks file for ./welcome_msg
+
+- name: Test
+  ansible.builtin.lineinfile:
+    path: /etc/update-motd.d/00-header
+    regexp: '^printf '
+    line: '{{ welcome_mgs_00 }}'
+    owner: root
+    group: root

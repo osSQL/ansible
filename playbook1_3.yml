@@ -1,0 +1,6 @@
+---
+
+- name: tell
+  hosts: all
+  roles:
+    - welcome_msg

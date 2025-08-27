@@ -1,0 +1,9 @@
+---
+- name: Test Custom Configuration
+  hosts: all
+  roles:
+    - preparation_unzip
+    - zip_role 
+      
+
+    

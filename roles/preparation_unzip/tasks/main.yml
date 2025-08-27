@@ -1,0 +1,22 @@
+---
+# tasks file for ./roles/preparation_unzip
+
+- name: tar_install
+  apt:
+    name: tar
+    state: present
+
+
+- name: Mkdir for unzip-files
+  command: mkdir /home/ansible/unzip
+  register: become_check
+  changed_when: false
+  failed_when: false
+
+- name: nginx zip install
+  command: wget -P /home/ansible https://github.com/nginx/nginx/releases/download/release-1.29.1/nginx-1.29.1.tar.gz
+  register: become_check
+  changed_when: false
+  failed_when: false
+  
+  

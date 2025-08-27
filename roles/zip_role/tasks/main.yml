@@ -1,0 +1,18 @@
+---
+# tasks file for ./zip_role
+
+
+
+- name: nginx unzip
+  command:  tar -xf nginx-1.29.1.tar.gz -C /home/ansible/unzip
+  register: become_check
+  changed_when: false
+  failed_when: false
+
+- name: nginx archive delete
+  command: rm nginx-1.29.1.tar.gz
+  register: become_check
+  changed_when: false
+  failed_when: false
+  
+  
