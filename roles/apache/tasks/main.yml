@@ -24,6 +24,12 @@
     dest: "/etc/apache2/sites-available/index.conf"
   notify: Restart Apache 
 
+- name: Opening 80 port
+  ansible.builtin.iptables:
+    chain: INPUT
+    protocol: tcp
+    destination_port: 80
+    jump: ACCEPT
     
 - name: Check 80
   ansible.builtin.wait_for:
